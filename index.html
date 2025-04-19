@@ -15,9 +15,37 @@
                 console.log("And I'd kind of like to hold his paw...");
             });
 
+            window.addEventListener("keypress", function(event){
+                console.log(event);
+                if (event.key == "h") {
+                    window.play("da_clap");
+                }
+
+                if (event.key == "t") {
+                    window.play("hi_hat");
+                }
+
+                if (event.key == " ") {
+                    window.play("kick");
+                }
+
+                if (event.key == "u") {
+                    window.play("tom");
+                }
+
+                if (event.key == "i") {
+                    window.play("crash");
+                }
+            });
+
             setTimeout(function() {
                 console.log("What's worse is that he is orange!")
             }, 1000);
+
+            window.play = function(id) {
+                document.getElementById(id).currentTime = 0;
+                document.getElementById(id).play();
+            }
         </script>
 
     </head>
@@ -34,16 +62,29 @@
         <hr>
 
         <!-- Preformatted Element -->
-        <pre>
-            Weird fucking text
-    That is going all over the place
-Weeeeee                aaaaaaaaaaaaaaaaaa
-angel    angle     babaooey                                                             á̵̺͌ä̸̞́a̶̻͉̎a̵̹̣͝á̶͙̖̕ã̷̪̼a̶̫̾a̵̜̻͝
-        </pre>
+        <audio id="da_clap" controls>
+            <source src="./99DrumSamples/Samples/clap-808.ogg" type="audio/ogg">
+        </audio>
+
+        <audio id="hi_hat" controls>
+            <source src="./99DrumSamples/Samples/hihat-808.ogg" type="audio/ogg">
+        </audio>
+
+        <audio id="kick" controls>
+            <source src="./99DrumSamples/Samples/kick-808.ogg" type="audio/ogg">
+        </audio>
+
+        <audio id="tom" controls>
+            <source src="./99DrumSamples/Samples/tom-808.ogg" type="audio/ogg">
+        </audio>
+
+        <audio id="crash" controls>
+            <source src="./99DrumSamples/Samples/crash-808.ogg" type="audio/ogg">
+        </audio>
 
         <hr>
 
         <!-- Button -->
-        <button onclick="alert('you pushed the button!')">Click This Button!</button>
+        <button onclick="">Click This Button!</button>
     </body>
 </html>
