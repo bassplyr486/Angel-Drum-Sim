@@ -8,7 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
         <!-- Example JavaScript -->
-        <script>
+        <script defer>
             console.log("Angel is kind of cute ngl...");
 
             window.addEventListener("DOMContentLoaded", function(){
@@ -45,7 +45,31 @@
             window.play = function(id) {
                 document.getElementById(id).currentTime = 0;
                 document.getElementById(id).play();
+                document.getElementById(id + "_visualizer").style.backgroundColor="red";
             }
+
+            window.addEventListener("DOMContentLoaded", function(){
+                document.getElementById("da_clap").addEventListener("ended", () => {
+                    document.getElementById("da_clap" + "_visualizer").style.backgroundColor="white"; 
+                });
+
+                document.getElementById("hi_hat").addEventListener("ended", () => {
+                    document.getElementById("hi_hat" + "_visualizer").style.backgroundColor="white"; 
+                });
+
+                document.getElementById("kick").addEventListener("ended", () => {
+                    document.getElementById("kick" + "_visualizer").style.backgroundColor="white"; 
+                });
+
+                document.getElementById("tom").addEventListener("ended", () => {
+                    document.getElementById("tom" + "_visualizer").style.backgroundColor="white"; 
+                });
+
+                document.getElementById("crash").addEventListener("ended", () => {
+                    document.getElementById("crash" + "_visualizer").style.backgroundColor="white"; 
+                });
+            });
+
         </script>
 
     </head>
@@ -83,6 +107,16 @@
         </audio>
 
         <hr>
+
+        <button onclick="" id="da_clap_visualizer">Clap</button>
+
+        <button onclick="" id="hi_hat_visualizer">Hi Hat</button>
+
+        <button onclick="" id="kick_visualizer">Kick</button>
+
+        <button onclick="" id="tom_visualizer">Tom</button>
+
+        <button onclick="" id="crash_visualizer">Crash</button>
 
         <!-- Button -->
         <button onclick="">Click This Button!</button>
