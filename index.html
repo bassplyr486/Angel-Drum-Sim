@@ -4,7 +4,8 @@
         <!-- Page Metadata -->
         <meta charset='utf-8'>
         <title>Angel's Website</title>
-        <link rel="icon" href="./icon.png" type="image/x-icon">
+        <link rel="icon" href="./AngelDance_small64.gif" type="image/gif">
+        <link rel="shortcut icon" href="./AngelDance_small64.gif" type="image/gif">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
         <!-- Example JavaScript -->
@@ -94,8 +95,13 @@
             window.updatePreset = function() {
                 var type = document.getElementById("type").value;
                 console.log(type);
+
+                if(type=="Skeleton" && false) { // this one shouldn't ever actually activate, it's just here as a reference
+                    window.changePreset("clap/snare", "hat", "kick", "tom", "crash");
+                }
+
                 if (type=="Acoustic") { 
-                    window.changePreset("./99DrumSamples2/99 Drum Samples II/Snare - OG.ogg", "./99DrumSamples2/99 Drum Samples II/Hats - Metal.ogg", "./99DrumSamples2/99 Drum Samples II/Kick - 1985.ogg", "./99DrumSamples2/99 Drum Samples II/Perc - Tomtom.ogg", "./99DrumSamples/Samples/crash-acoustic.ogg");
+                    window.changePreset("./99DrumSamples2/99_Drum_Samples_II/Snare-OG.ogg", "./99DrumSamples2/99_Drum_Samples_II/Hats-Metal.ogg", "./99DrumSamples2/99_Drum_Samples_II/Kick-1985.ogg", "./99DrumSamples2/99_Drum_Samples_II/Perc-Tomtom.ogg", "./99DrumSamples/Samples/crash-acoustic.ogg");
                 }
 
                 if (type=="Techno") {
@@ -104,6 +110,10 @@
 
                 if(type=="WorldTest") {
                     window.changePreset("./99DrumSamples/Samples/clap-analog.ogg", "./99DrumSamples/Samples/hihat-dist01.ogg", "./99DrumSamples/Samples/kick-slapback.ogg", "./99DrumSamples/Samples/perc-weirdo.ogg", "./99DrumSamples/Samples/cowbell-808.ogg");
+                }
+
+                if(type=="Snailien") {
+                    window.changePreset("./99DrumSamples2/99_Drum_Samples_II/Snare-USSR.ogg", "./99DrumSamples2/99_Drum_Samples_II/Hats-Sweet.ogg", "./99DrumSamples2/99_Drum_Samples_II/Kick-Slow_and_Low.ogg", "./99DrumSamples/Samples/tom-analog.ogg", "./99DrumSamples/Samples/crash-tape.ogg");
                 }
             }
 
@@ -131,29 +141,30 @@
             <option value="Techno">Techno</option>
             <option value="Acoustic">Acoustic</option>
             <option value="WorldTest">WorldTest</option>
+            <option value="Snailien">Snailien</option>
         </select>
 
         <hr>
 
         <!-- Preformatted Element -->
         <audio id="da_clap" controls>
-            <source src="./99DrumSamples/Samples/clap-808.ogg" type="audio/ogg">
+            <source src="UNSET" type="audio/ogg">
         </audio>
 
         <audio id="hi_hat" controls>
-            <source src="./99DrumSamples/Samples/hihat-808.ogg" type="audio/ogg">
+            <source src="UNSET" type="audio/ogg">
         </audio>
 
         <audio id="kick" controls>
-            <source src="./99DrumSamples/Samples/kick-808.ogg" type="audio/ogg">
+            <source src="UNSET" type="audio/ogg">
         </audio>
 
         <audio id="tom" controls>
-            <source src="./99DrumSamples/Samples/tom-808.ogg" type="audio/ogg">
+            <source src="UNSET" type="audio/ogg">
         </audio>
 
         <audio id="crash" controls>
-            <source src="./99DrumSamples/Samples/crash-808.ogg" type="audio/ogg">
+            <source src="UNSET" type="audio/ogg">
         </audio>
 
         <hr>
