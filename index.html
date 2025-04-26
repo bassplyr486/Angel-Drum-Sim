@@ -94,6 +94,11 @@
             window.updatePreset = function() {
                 var type = document.getElementById("type").value;
                 console.log(type);
+
+                if(type=="Skeleton" && false) { // this one shouldn't ever actually activate, it's just here as a reference
+                    window.changePreset("clap/snare", "hat", "kick", "tom", "crash");
+                }
+
                 if (type=="Acoustic") { 
                     window.changePreset("./99DrumSamples2/99_Drum_Samples_II/Snare-OG.ogg", "./99DrumSamples2/99_Drum_Samples_II/Hats-Metal.ogg", "./99DrumSamples2/99_Drum_Samples_II/Kick-1985.ogg", "./99DrumSamples2/99_Drum_Samples_II/Perc-Tomtom.ogg", "./99DrumSamples/Samples/crash-acoustic.ogg");
                 }
@@ -104,6 +109,10 @@
 
                 if(type=="WorldTest") {
                     window.changePreset("./99DrumSamples/Samples/clap-analog.ogg", "./99DrumSamples/Samples/hihat-dist01.ogg", "./99DrumSamples/Samples/kick-slapback.ogg", "./99DrumSamples/Samples/perc-weirdo.ogg", "./99DrumSamples/Samples/cowbell-808.ogg");
+                }
+
+                if(type=="Snailien") {
+                    window.changePreset("./99DrumSamples2/99_Drum_Samples_II/Snare-USSR.ogg", "./99DrumSamples2/99_Drum_Samples_II/Hats-Sweet.ogg", "./99DrumSamples2/99_Drum_Samples_II/Kick-Slow_and_Low.ogg", "./99DrumSamples/Samples/tom-analog.ogg", "./99DrumSamples/Samples/crash-tape.ogg");
                 }
             }
 
@@ -131,6 +140,7 @@
             <option value="Techno">Techno</option>
             <option value="Acoustic">Acoustic</option>
             <option value="WorldTest">WorldTest</option>
+            <option value="Snailien">Snailien</option>
         </select>
 
         <hr>
