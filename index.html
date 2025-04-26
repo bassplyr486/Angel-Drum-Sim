@@ -69,6 +69,43 @@
                     document.getElementById("crash" + "_visualizer").style.backgroundColor="white"; 
                 });
             });
+            
+            window.addEventListener("DOMContentLoaded", ()=> {
+                document.getElementById("type").addEventListener("input", ()=> {
+                    window.updatePreset();
+                });
+
+                window.updatePreset();
+            });
+
+            window.changePreset = function(clapPath, hatPath, kickPath, tomPath, crashPath) {
+                document.getElementById("da_clap").querySelector("source").src=clapPath;
+                document.getElementById("da_clap").load();
+                document.getElementById("hi_hat").querySelector("source").src=hatPath;
+                document.getElementById("hi_hat").load();
+                document.getElementById("kick").querySelector("source").src=kickPath;
+                document.getElementById("kick").load();
+                document.getElementById("tom").querySelector("source").src=tomPath;
+                document.getElementById("tom").load();
+                document.getElementById("crash").querySelector("source").src=crashPath;
+                document.getElementById("crash").load();
+            }
+
+            window.updatePreset = function() {
+                var type = document.getElementById("type").value;
+                console.log(type);
+                if (type=="Acoustic") { 
+                    window.changePreset("./99DrumSamples2/99 Drum Samples II/Snare - OG.ogg", "./99DrumSamples2/99 Drum Samples II/Hats - Metal.ogg", "./99DrumSamples2/99 Drum Samples II/Kick - 1985.ogg", "./99DrumSamples2/99 Drum Samples II/Perc - Tomtom.ogg", "./99DrumSamples/Samples/crash-acoustic.ogg");
+                }
+
+                if (type=="Techno") {
+                    window.changePreset("./99DrumSamples/Samples/clap-808.ogg", "./99DrumSamples/Samples/hihat-808.ogg", "./99DrumSamples/Samples/kick-808.ogg", "./99DrumSamples/Samples/tom-808.ogg", "./99DrumSamples/Samples/crash-808.ogg");
+                }
+
+                if(type=="WorldTest") {
+                    window.changePreset("./99DrumSamples/Samples/clap-analog.ogg", "./99DrumSamples/Samples/hihat-dist01.ogg", "./99DrumSamples/Samples/kick-slapback.ogg", "./99DrumSamples/Samples/perc-weirdo.ogg", "./99DrumSamples/Samples/cowbell-808.ogg");
+                }
+            }
 
         </script>
 
@@ -87,6 +124,14 @@
             tom: <b>u</b> <br>
             crash: <b>i</b>
         </p>
+
+        <hr>
+
+        <select id="type">
+            <option value="Techno">Techno</option>
+            <option value="Acoustic">Acoustic</option>
+            <option value="WorldTest">WorldTest</option>
+        </select>
 
         <hr>
 
